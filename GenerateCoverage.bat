@@ -8,15 +8,12 @@ rd tmp /s /q
 mkdir tmp
 
 echo "Copying dependencies";
-copy c:\Path\To\nunit.framework.dll c:\jenkins\workspace\CodeCoverage\tmp\ 
-copy c:\Path\To\nunit.core.dll c:\jenkins\workspace\CodeCoverage\tmp\
-copy c:\Path\To\nunit.core.interfaces.dll c:\jenkins\workspace\CodeCoverage\tmp\
-copy c:\Path\To\Mono.Cecil.dll c:\jenkins\workspace\CodeCoverage\tmp\
-copy c:\Path\To\Mono.Cecil.Mdb.dll c:\jenkins\workspace\CodeCoverage\tmp\
-copy "C:\Path\To\UnityEngine.dll" c:\jenkins\workspace\CodeCoverage\tmp\
-copy "C:\Path\To\PlayMaker\PlayMaker.dll" c:\jenkins\workspace\CodeCoverage\tmp\
-copy "C:\Path\To\HOTween.dll" c:\jenkins\workspace\CodeCoverage\tmp\
-copy "C:\Path\To\NSubstitute.dll" c:\jenkins\workspace\CodeCoverage\tmp\
+copy C:\Program Files (x86)\NUnit 2.6.4\bin\nuinit.framework.dll c:\jenkins\workspace\CodeCoverage\tmp\ 
+copy C:\Program Files (x86)\NUnit 2.6.4\bin\lib\nunit.core.dll c:\jenkins\workspace\CodeCoverage\tmp\
+copy C:\Program Files (x86)\NUnit 2.6.4\bin\lib\nunit.core.interfaces.dll c:\jenkins\workspace\CodeCoverage\tmp\
+copy C:\Program Files (x86)\Mono\lib\mono\gac\Mono.Cecil\0.9.5.0__0738eb9f132ed756\Mono.Cecil.dll c:\jenkins\workspace\CodeCoverage\tmp\
+copy C:\Program Files (x86)\Mono\lib\mono\gac\Mono.Cecil.Mdb\0.9.5.0__0738eb9f132ed756\Mono.Cecil.Mdb.dll c:\jenkins\workspace\CodeCoverage\tmp\
+copy C:\Program Files\Unity\Editor\Data\PlaybackEngines\metrosupport\Players\Windows81\X86\release\UnityEngine.dll c:\jenkins\workspace\CodeCoverage\tmp\
 
 echo "Generating DLL";
 csc.exe @full.rsp
