@@ -15,7 +15,7 @@ copy "C:\Program Files (x86)\Mono\lib\mono\gac\Mono.Cecil\0.9.5.0__0738eb9f132ed
 copy "C:\Program Files (x86)\Mono\lib\mono\gac\Mono.Cecil.Mdb\0.9.5.0__0738eb9f132ed756\Mono.Cecil.Mdb.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\"
 copy "C:\Program Files\Unity\Editor\Data\PlaybackEngines\metrosupport\Players\Windows81\X86\release\UnityEngine.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\"
 echo "Generating DLL";
-csc.exe @full.rsp
+C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe @full.rsp
 
 echo "Generating .coverage file";
 vstest.console.exe /UseVsixExtensions:true /Enablecodecoverage /InIsolation C:\Jenkins\workspace\CodeCoverage\tmp\full.dll | wtee tmp\vsoutput.txt
