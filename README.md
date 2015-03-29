@@ -13,4 +13,4 @@ WTee
 NunitAdapter (version 1.0.0.0)
 
 1) Follow the instructions found here: http://codingdebauchery.blogspot.com/2014/03/code-coverage-for-unityc.html
-(Don't worry, James and Stefan will set your computer up to run these tests)
+(Don't worry, we will set your computer up on Monday to run these tests)
