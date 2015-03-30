@@ -23,6 +23,6 @@ echo "Generating .coverage file";
 echo "Converting .coverage file";
 findAndMoveCoverageFile.py
 
-CoverageConverter\CodeCoverageConverter.exe "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\raw.coverage" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\converted.coveragexml"
+"C:\Users\Stefan\Documents\Visual Studio 2012\Projects\ConsoleApplication6\ConsoleApplication6\bin\Debug\ConsoleApplication6.exe" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\raw.coverage" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\converted.coveragexml"
 
 ReportGen\ReportGenerator.exe -reports:"C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\converted.coveragexml" -targetdir:HtmlReport
