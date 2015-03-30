@@ -1,5 +1,5 @@
 echo "Setting up environment variables"
-call VsDevCmd.bat
+call "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\Tools\VsDevCmd.bat"
 
 echo "cleaning house"
 rd TestResults /s /q
