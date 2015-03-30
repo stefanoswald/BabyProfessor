@@ -23,6 +23,6 @@ echo "Generating .coverage file";
 echo "Converting .coverage file";
 findAndMoveCoverageFile.py
 
-CoverageConverter\CodeCoverageConverter.exe tmp\raw.coverage tmp\full.dll tmp\converted.coveragexml
+CoverageConverter\CodeCoverageConverter.exe "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\raw.coverage" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\converted.coveragexml"
 
-ReportGen\ReportGenerator.exe -reports:tmp\converted.coveragexml -targetdir:HtmlReport
+ReportGen\ReportGenerator.exe -reports:"C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\converted.coveragexml" -targetdir:HtmlReport
