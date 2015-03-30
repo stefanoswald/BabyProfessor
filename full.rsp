@@ -11,5 +11,5 @@
 /r:nunit.framework.dll;nunit.core.dll;nunit.core.interfaces.dll;Mono.Cecil.dll;Mono.Cecil.Mdb.dll;UnityEngine.dll
 
 # Location of C# files. 
-/recurse:"C:\Users\Stefan\Desktop\Dropbox\_Spring2015\Testing\BabyProfessor\BabyProfessor\Assets\Scripts\*.cs"
-/recurse:"C:\Users\Stefan\Desktop\Dropbox\_Spring2015\Testing\BabyProfessor\BabyProfessor\Assets\Editor\Tests\*.cs"
+/recurse:"C:\Users\Stefan\Desktop\BabyProfessor\Assets\Scripts\*.cs"
+/recurse:"C:\Users\Stefan\Desktop\BabyProfessor\Assets\Editor\Tests\*.cs"
