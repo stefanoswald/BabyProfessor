@@ -7,7 +7,7 @@
 /debug
 
 # links
-/lib:"C:\Program Files (x86)\Jenkins\workspace\CodeCoverage\tmp"
+/lib:"C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp"
 /r:nunit.framework.dll;nunit.core.dll;nunit.core.interfaces.dll;Mono.Cecil.dll;Mono.Cecil.Mdb.dll;UnityEngine.dll
 
 # Location of C# files. 
