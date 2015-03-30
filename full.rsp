@@ -12,4 +12,4 @@
 
 # Location of C# files. 
 /recurse:"C:\Users\Stefan\Desktop\Dropbox\_Spring2015\Testing\BabyProfessor\BabyProfessor\Assets\Scripts\*.cs"
-/recurse:"C:\Users\Stefan\Desktop\Dropbox\_Spring2015\Testing\BabyProfessor\BabyProfessor\Assets\Tests\*.cs"
+/recurse:"C:\Users\Stefan\Desktop\Dropbox\_Spring2015\Testing\BabyProfessor\BabyProfessor\Assets\Editor\Tests\*.cs"
