@@ -3,6 +3,7 @@ fp = open("C:/Program Files (x86)/Jenkins/jobs/Baby Professor/workspace/CodeCove
 coverage = ".coverage"
 dest = "C:/Program Files (x86)/Jenkins/jobs/Baby Professor/workspace/CodeCoverage/tmp/raw.coverage"
 for line in fp:
+<<<<<<< HEAD
     if coverage in line:
         s = line.strip()
         print(s)
@@ -10,5 +11,11 @@ for line in fp:
         #loop through s, replace \ with / character
         os.rename(s, dest)
 
+=======
+ if line.find(coverage) > -1:
+  source = line.strip()
+  print source
+  os.rename(source, "C:/Program Files (x86)/Jenkins/jobs/Baby Professor/workspace/CodeCoverage/tmp/raw.coverage")
+>>>>>>> origin/master
 
 fp.close()
