@@ -14,6 +14,7 @@ copy "C:\Program Files (x86)\NUnit 2.6.4\bin\lib\nunit.core.interfaces.dll" "C:\
 copy "C:\Program Files (x86)\Mono\lib\mono\gac\Mono.Cecil\0.9.5.0__0738eb9f132ed756\Mono.Cecil.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\"
 copy "C:\Program Files (x86)\Mono\lib\mono\gac\Mono.Cecil.Mdb\0.9.5.0__0738eb9f132ed756\Mono.Cecil.Mdb.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\"
 copy "C:\Program Files\Unity\Editor\Data\PlaybackEngines\metrosupport\Players\Windows81\X86\release\UnityEngine.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\"
+copy "C:\Users\Stefan\Downloads\NSubstitute.1.8.1.0\lib\net45\NSubstitute.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\"
 echo "Generating DLL";
 C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe @full.rsp
 
