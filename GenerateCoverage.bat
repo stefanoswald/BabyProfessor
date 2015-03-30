@@ -22,7 +22,7 @@ echo "Generating .coverage file";
 "C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" /UseVsixExtensions:true /Enablecodecoverage /InIsolation "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" | "C:\Program Files (x86)\Jenkins\wtee.exe" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\vsoutput.txt"
 
 echo "Converting .coverage file";
-findAndMoveCoverageFile.py
+start "C:\Program Files\Python 3.5\python.exe" C:\Users\Stefan\Desktop\BabyProfessor\findAndMoveCoverageFile.py
 
 "C:\Users\Stefan\Documents\Visual Studio 2012\Projects\ConsoleApplication6\ConsoleApplication6\bin\Debug\ConsoleApplication6.exe" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\SYSTEM_BIGMAC 2015-03-30 10_20_55.coverage" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\converted.coveragexml"
 
