@@ -3,7 +3,7 @@
 
 # Output target and name.
 /t:library 
-/out:"C:\Program Files (x86)\Jenkins\workspace\CodeCoverage\tmp\full.dll" 
+/out:"C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" 
 /debug
 
 # links
