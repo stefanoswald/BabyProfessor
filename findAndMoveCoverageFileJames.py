@@ -1,13 +1,13 @@
 import os
-fp = open("C:/Program Files (x86)/Jenkins/jobs/Baby Professor/workspace/CodeCoverage/tmp/vsoutput.txt")
-coverage = ".coverage"
-dest = "C:/Program Files (x86)/Jenkins/jobs/Baby Professor/workspace/CodeCoverage/tmp/raw.coverage"
+fp = open("C:/Users/JaggerMcClaw/Desktop/PythonTest/PullFile.txt")
+coverage = ".txt"
+dest = "C:/Users/JaggerMcClaw/Desktop/PythonTest/2/vsoutput.txt"
 for line in fp:
     if coverage in line:
         s = line.strip()
+        s = s.replace('\\','/')
         print(s)
         print(dest)
-        #loop through s, replace \ with / character
         os.rename(s, dest)
 
 
