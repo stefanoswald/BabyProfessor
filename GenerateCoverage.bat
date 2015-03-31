@@ -19,7 +19,7 @@ echo "Generating DLL";
 C:\Windows\Microsoft.NET\Framework\v4.0.30319\csc.exe @full.rsp
 
 echo "Generating .coverage file";
-"C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" /UseVsixExtensions:true /Enablecodecoverage /InIsolation "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" | "C:\Program Files (x86)\Jenkins\wtee.exe" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\vsoutput.txt"
+"C:\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\CommonExtensions\Microsoft\TestWindow\vstest.console.exe" /UseVsixExtensions:true /Enablecodecoverage /InIsolation /test:SampleTest "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" | "C:\Program Files (x86)\Jenkins\wtee.exe" "C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\vsoutput.txt"
 
 echo "Converting .coverage file";
 start "C:\Program Files\Python 3.5\python.exe" C:\Users\Stefan\Desktop\BabyProfessor\findAndMoveCoverageFile.py
