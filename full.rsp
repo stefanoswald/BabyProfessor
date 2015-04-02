@@ -3,7 +3,7 @@
 
 # Output target and name.
 /t:library 
-/out:"C:\BabyProfessor\full.dll" 
+/out:"C:\BabyProfessor\tmp\full.dll" 
 /debug
 
 # links
