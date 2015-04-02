@@ -3,11 +3,11 @@
 
 # Output target and name.
 /t:library 
-/out:"C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp\full.dll" 
+/out:"C:\BabyProfessor\full.dll" 
 /debug
 
 # links
-/lib:"C:\Program Files (x86)\Jenkins\jobs\Baby Professor\workspace\CodeCoverage\tmp"
+/lib:"C:\BabyProfessor\tmp"
 /r:nunit.framework.dll;nunit.core.dll;nunit.core.interfaces.dll;Mono.Cecil.dll;Mono.Cecil.Mdb.dll;UnityEngine.dll
 
 # Location of C# files. 
