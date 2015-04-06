@@ -6,6 +6,10 @@ public class Enemy : Person {
 	Character playerScript;
 	// Use this for initialization
 	void Awake () {
+		AwakeFunction ();
+	}
+
+	void AwakeFunction(){
 		SetHealth (5);
 		player = GameObject.Find ("Player");
 		playerScript = (Character)player.GetComponent (typeof(Character));
@@ -13,6 +17,10 @@ public class Enemy : Person {
 	
 	// Update is called once per frame
 	void Update () {
+		UpdateFunction ();
+	}
+
+	void UpdateFunction(){
 		if (GetHealth () <= 0) {
 			DestroySelf();
 		}
@@ -24,6 +32,9 @@ public class Enemy : Person {
 		Destroy (gameObject);
 	}
 	void OnTriggerEnter2D(Collider2D coll){
+		Trigger (coll);
+	}
+	void Trigger(Collider2D coll){
 		if (coll.gameObject.tag == "Projectile") {
 			Debug.Log ("shoot");
 			Projectile pScript = (Projectile)coll.gameObject.GetComponent (typeof(Projectile));

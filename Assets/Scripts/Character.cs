@@ -14,6 +14,9 @@ public class Character : Person {
 	
 	// Update is called once per frame
 	void Update () {
+		UpdateFunction ();
+	}
+	void UpdateFunction(){
 		if (Input.GetKeyDown (KeyCode.Space) && GetGrounded()) {
 			Jump();
 		}
@@ -54,6 +57,10 @@ public class Character : Person {
 	}
 	
 	void OnCollisionEnter2D(Collision2D coll) {
+		Collision (coll);
+	}
+
+	void Collision(Collision2D coll){
 		if (coll.gameObject.tag == "Wall"){
 			SetGrounded (true);
 			Debug.Log ("hit wall");
@@ -65,7 +72,7 @@ public class Character : Person {
 			Destroy(coll.gameObject);
 			Debug.Log ("hit enemy");
 		}
-
+		
 		if (coll.gameObject.tag == "Spike"){
 			//Destroy (gameObject);
 			Debug.Log ("hit spike");
@@ -74,6 +81,10 @@ public class Character : Person {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
+		Trigger (coll);
+	}
+
+	void Trigger(Collider2D coll){
 		if (coll.gameObject.tag == "Coin"){
 			SetScore(GetScore()+1);
 			Destroy (coll.gameObject);

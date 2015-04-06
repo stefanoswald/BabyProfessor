@@ -10,6 +10,9 @@ public class Projectile : Collider {
 
 	// Use this for initialization
 	void Awake () {
+		AwakeFunction ();
+	}
+	void AwakeFunction(){
 		rigidBody = gameObject.GetComponent<Rigidbody2D>();
 		player = GameObject.Find ("Player");
 		characterScript = (Character)player.GetComponent (typeof(Character));
@@ -18,6 +21,9 @@ public class Projectile : Collider {
 	
 	// Update is called once per frame
 	void Update () {
+		UpdateFunction ();
+	}
+	void UpdateFunction(){
 		rigidBody.velocity = new Vector2(speed, rigidBody.velocity.y);
 	}
 
@@ -38,6 +44,9 @@ public class Projectile : Collider {
 		Destroy (gameObject);
 	}
 	void OnCollisionEnter2D(Collision2D coll) {
+		Collision (coll);
+	}
+	void Collision(Collision2D coll){
 		if (coll.gameObject.tag == "Enemy") {
 			//remove enemy health
 		}

@@ -11,6 +11,10 @@ public class Destroyer : MonoBehaviour {
 	// Use this for initialization
 
 	void Awake (){
+		AwakeFunction();
+	}
+
+	void AwakeFunction(){
 		SpwanSection (0);
 		SpwanSection (0);
 		SpwanSection (0);
@@ -61,12 +65,16 @@ public class Destroyer : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll){
+		Trigger (coll);
+
+	}
+
+	void Trigger(Collider2D coll){
 		if (coll.gameObject.tag == "Chunk"){
 			Destroy (coll.gameObject);
 			Debug.Log ("hit trigger");
 			SpwanSection(NewChunkNumber());
 		}
-
 	}
 
 }
