@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace UnityTest{
 public class Projectile : Collider {
 	int speed = 15;
 	int damage;
@@ -51,4 +51,5 @@ public class Projectile : Collider {
 			//remove enemy health
 		}
 	}
+}
 }
