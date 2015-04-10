@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace UnityTest{
 public class Destroyer : MonoBehaviour {
 	int chunkPosition = 0;
 	float chunkNumber = 0;
@@ -54,7 +54,7 @@ public class Destroyer : MonoBehaviour {
 	}
 
 	float NewChunkNumber(){
-		chunkNumber = GMScript.GenerateLevel();
+		chunkNumber = GMScript.GMS.GenerateLevel();
 		if (chunkNumber == lastNumber) {
 			chunkNumber++;
 			lastNumber = chunkNumber;
@@ -77,4 +77,5 @@ public class Destroyer : MonoBehaviour {
 		}
 	}
 
+}
 }

@@ -6,15 +6,6 @@ public class Person : MonoBehaviour {
 	int damage = 1;
 	bool grounded;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 	public int GetHealth(){
 		return health;
 	}

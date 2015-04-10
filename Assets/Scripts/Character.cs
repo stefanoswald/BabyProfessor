@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace UnityTest{
 public class Character : Person {
 	public int score = 0;
 	[SerializeField] private Rigidbody2D rigidBody;
 	[SerializeField] private Transform spawner;
+	GameObject GM;
+	GameManager GMScript;
 	float jumpForce = 400f;
 	float speed = 10f;
 	// Use this for initialization
 	void Awake () {
 		SetHealth (5);
+		GM = GameObject.Find ("GameManager");
+		GMScript = (GameManager)GM.GetComponent (typeof(GameManager));
 	}
 	
 	// Update is called once per frame
@@ -39,8 +43,9 @@ public class Character : Person {
 	}
 
 	void Die(){
-		//set data in gameManager
 		LoadResults (GetScore());
+		//do anything that you want to happen before death here
+		Application.LoadLevel ("Results");
 	}
 	
 
@@ -53,7 +58,7 @@ public class Character : Person {
 	}
 
 	public void LoadResults(int score){
-		//load the results page
+		GMScript.SetScore (score);
 	}
 	
 	void OnCollisionEnter2D(Collision2D coll) {
@@ -96,4 +101,5 @@ public class Character : Person {
 			Debug.Log ("hit powerup");
 		}
 	}
+}
 }

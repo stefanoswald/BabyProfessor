@@ -1,60 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections;
-
-public class GameManager : MonoBehaviour {
-	string seed;
-	float floatSeed = 0;
-	float section = 0;
-	float generated = 0;
-	bool artType;
-	private string possibleCharacters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		//GenerateLevel ();
-	}
-
-	public void ConvertSeed(string levelSeed){
-		string stringSeed = "0";
-		if (levelSeed == null){
-			for(int i = 0; i<20; i++){
-				int a = Random.Range (0,possibleCharacters.Length);
-				stringSeed = stringSeed + possibleCharacters[a];
+namespace UnityTest{
+	public class GameManager : MonoBehaviour, INoise {
+		static bool created = false;
+		bool artType;
+		public GameManagerSub GMS;
+		int score = 0;
+		// Use this for initialization
+		void Awake () {
+            GMS.SetNoise(this);
+			if (!created)
+			{
+				DontDestroyOnLoad(this.gameObject);
+				created = true;
+			}
+		
+			else
+			{
+				Destroy(this.gameObject);
 			}
 		}
-		for (int i = 0; i< levelSeed.Length; i++) {
-			char c = levelSeed[i];
-			int x = c;
-			stringSeed += x;
+
+		void Update () {
+			artType = GMS.artType;
 		}
-		floatSeed = float.Parse (stringSeed);
-	}
 
-	public float GenerateLevel(){
-		generated = Mathf.PerlinNoise (floatSeed, section);
-		section = section + 100.1f;
-		//generate level here
-		generated *= 10;
-		generated = Mathf.Floor (generated);
-		//Debug.Log(generated);
-		return generated;
-		//closer to 5 is more common
-	}
+		public string GetSeed(){
+			return GMS.GetSeed();
+		}
+		
+		public void SetSeed(string newSeed){
+			GMS.SetSeed(newSeed);
+		}
 
-	public void SwapArt(){
-		artType = !artType;
-	}
+		public int GetScore(){
+			return GMS.GetScore();
+		}
+		
+		public void SetScore(int newScore){
+			GMS.SetScore( newScore);
+		}
 
-	public string GetSeed(){
-		return seed;
-	}
+        #region INoise implementation
 
-	public void SetSeed(string newSeed){
-		seed = newSeed;
-	}
+        public float Noise(float floatSeed, float section)
+        {
+          return Mathf.PerlinNoise(floatSeed, section);
+        }
 
+        #endregion
+	
+	}
 }

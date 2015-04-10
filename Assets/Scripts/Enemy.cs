@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+namespace UnityTest{
 public class Enemy : Person {
 	GameObject player;
 	Character playerScript;
@@ -42,4 +42,5 @@ public class Enemy : Person {
 			Destroy (coll.gameObject);
 		}
 	}
+}
 }
