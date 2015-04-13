@@ -1,3 +1,3 @@
-start "C:\BabyProfessor\BabyProfessor\GMTests.html"
+start iexplore C:\BabyProfessor\BabyProfessor\GMTests.html
 echo "try to open google"
-start "www.google.com"
+start iexplore https://www.google.com/
