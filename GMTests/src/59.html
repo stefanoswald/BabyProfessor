@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>c:\users\jaggermcclaw\documents\babyprofessor\assets\scripts\gamemanagersub.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using UnityEngine;
+using System.Collections;
+using System;
+
+namespace UnityTest 
+{
+	[Serializable]
+	public class GameManagerSub
+	{
+		public string seed;
+		public float floatSeed = 0;
+		public float section = 0;
+		public float generated = 0;
+		public bool artType;
+		private string possibleCharacters = &quot;0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
+		int score = 0;
+		private INoise noise;
+
+		public void ConvertSeed(string levelSeed){
+			string stringSeed = &quot;0&quot;;
+			if (levelSeed == null || levelSeed == &quot;0&quot;){
+				for(int i = 0; i&lt;5; i++){
+					System.Random rnd = new System.Random();
+					int a = rnd.Next (0,possibleCharacters.Length-1);
+					stringSeed = stringSeed + possibleCharacters[a];
+				}
+			}
+			for (int i = 0; i&lt; levelSeed.Length; i++) {
+				char c = levelSeed[i];
+				int x = c;
+				stringSeed += x;
+			}
+			floatSeed = float.Parse (stringSeed);
+		}
+		
+		public float GenerateLevel(){
+			noise.Noise (floatSeed, section);
+			section = section + 100.1f;
+			//generate level here
+			generated *= 10;
+			generated = Mathf.Floor (generated);
+			return generated;
+			//closer to 5 is more common
+		}
+		
+		public void SwapArt(){
+			artType = !artType;
+		}
+		
+		public string GetSeed(){
+			return seed;
+		}
+		
+		public void SetSeed(string newSeed){
+			seed = newSeed;
+		}
+		
+		public int GetScore(){
+			return score;
+		}
+		
+		public void SetScore(int newScore){
+			score = newScore;
+		}
+
+        public void SetNoise(INoise noise)
+        {
+            this.noise = noise;
+        }
+
+	}
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[21,46,21,47,0],[22,9,22,19,0],[22,29,22,30,0],[23,6,23,46,0],[24,6,24,55,0],[25,6,25,54,0],[26,5,26,6,0],[22,25,22,28,0],[22,20,22,23,0],[27,4,27,5,0],[19,44,19,45,1],[20,4,20,28,1],[21,4,21,46,1],[28,9,28,19,1],[28,46,28,47,1],[29,5,29,27,1],[30,5,30,15,1],[31,5,31,21,1],[32,4,32,5,1],[28,41,28,44,1],[28,20,28,39,1],[33,4,33,41,1],[34,3,34,4,1],[36,31,36,32,1],[37,4,37,37,1],[38,4,38,31,1],[40,4,40,20,1],[41,4,41,40,1],[42,4,42,21,1],[44,3,44,4,1],[46,24,46,25,1],[47,4,47,23,1],[48,3,48,4,1],[50,26,50,27,1],[51,4,51,16,1],[52,3,52,4,1],[54,38,54,39,1],[55,4,55,19,1],[56,3,56,4,1],[58,24,58,25,1],[59,4,59,17,1],[60,3,60,4,1],[62,37,62,38,1],[63,4,63,21,1],[64,3,64,4,1],[67,9,67,10,1],[68,13,68,32,1],[69,9,69,10,1],[11,3,11,30,1],[12,3,12,28,1],[13,3,13,30,1],[15,3,15,104,1],[16,3,16,17,1]]);
+    </script>
+  </body>
+</html>

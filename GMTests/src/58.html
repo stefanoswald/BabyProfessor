@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>c:\users\jaggermcclaw\documents\babyprofessor\assets\scripts\gamemanager.cs</title>
+    <script type="text/javascript" src="../js/dotcover.sourceview.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/dotcover.report.css" />
+  </head>
+  <body>
+    <pre id="content" class="source-code">
+using UnityEngine;
+using System.Collections;
+namespace UnityTest{
+	public class GameManager : MonoBehaviour, INoise {
+		static bool created = false;
+		bool artType;
+		public GameManagerSub GMS;
+		int score = 0;
+		// Use this for initialization
+		void Awake () {
+            GMS.SetNoise(this);
+			if (!created)
+			{
+				DontDestroyOnLoad(this.gameObject);
+				created = true;
+			}
+		
+			else
+			{
+				Destroy(this.gameObject);
+			}
+		}
+
+		void Update () {
+			artType = GMS.artType;
+		}
+
+		public string GetSeed(){
+			return GMS.GetSeed();
+		}
+		
+		public void SetSeed(string newSeed){
+			GMS.SetSeed(newSeed);
+		}
+
+		public int GetScore(){
+			return GMS.GetScore();
+		}
+		
+		public void SetScore(int newScore){
+			GMS.SetScore( newScore);
+		}
+
+        #region INoise implementation
+
+        public float Noise(float floatSeed, float section)
+        {
+          return Mathf.PerlinNoise(floatSeed, section);
+        }
+
+        #endregion
+	
+	}
+}
+    </pre>
+    <script type="text/javascript">
+      highlightRanges([[10,17,10,18,0],[11,13,11,32,0],[12,4,12,17,0],[13,4,13,5,0],[14,5,14,40,0],[15,5,15,20,0],[16,4,16,5,0],[19,4,19,5,0],[20,5,20,30,0],[21,4,21,5,0],[22,3,22,4,0],[24,18,24,19,0],[25,4,25,26,0],[26,3,26,4,0],[28,26,28,27,0],[29,4,29,25,0],[30,3,30,4,0],[32,38,32,39,0],[33,4,33,25,0],[34,3,34,4,0],[36,24,36,25,0],[37,4,37,26,0],[38,3,38,4,0],[40,37,40,38,0],[41,4,41,28,0],[42,3,42,4,0],[47,9,47,10,0],[48,11,48,56,0],[49,9,49,10,0],[8,3,8,17,0],[5,3,5,31,0]]);
+    </script>
+  </body>
+</html>
