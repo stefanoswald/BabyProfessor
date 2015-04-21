@@ -61,14 +61,36 @@ namespace UnityTest
 			string seed = GMS.GetSeed ();
 			Assert.AreEqual ("Amazing", seed);
 		}
-        [Test]
-        public void GetSetScore()
-        {
-            var GMS = GetGMS();
-            GMS.SetScore(5);
-            int score = GMS.GetScore();
-            Assert.AreEqual(5, score);
-        }
+
+	       [Test]
+	        public void GetSetScore()
+	       {
+	            var GMS = GetGMS();
+	           GMS.SetScore(5);
+	            int score = GMS.GetScore();
+	            Assert.AreEqual(5, score);
+	        }
+	        
+	        ///Need to add these tests
+	        
+		[Test]
+	        public void GetHealth()
+	       {
+	            var GMS = GetGMS();
+	           GMS.SetHealth(100);
+	            int health = GMS.GetHealth();
+	            Assert.AreEqual(100, health);
+	        }
+	        
+	        [Test]
+	        public void GetSetWeaponLevel()
+	       {
+	            var GMS = GetGMS();
+	           GMS.SetWeaponLevel(1);
+	            int weapon = GMS.GetWeaponLevel();
+	            Assert.AreEqual(1, weapon);
+	        }
+	      
 
 		private GameManagerSub GetGMS (){
 			return Substitute.For<GameManagerSub> ();
