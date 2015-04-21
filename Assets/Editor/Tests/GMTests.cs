@@ -74,11 +74,20 @@ namespace UnityTest
 	        ///Need to add these tests
 	        
 		[Test]
-	        public void GetHealth()
+	        public void GetSetHealth()
 	       {
 	            var GMS = GetGMS();
 	           GMS.SetHealth(100);
 	            int health = GMS.GetHealth();
+	            Assert.AreEqual(100, health);
+	        }
+	        
+	        [Test]
+	        public void GetSetEnemyHealth()
+	       {
+	            var GMS = GetGMS();
+	           GMS.SetEnemyHealth(100);
+	            int health = GMS.GetEnemyHealth();
 	            Assert.AreEqual(100, health);
 	        }
 	        
@@ -90,7 +99,16 @@ namespace UnityTest
 	            int weapon = GMS.GetWeaponLevel();
 	            Assert.AreEqual(1, weapon);
 	        }
-	      
+	        
+	        [Test]
+	        public void GetSetCoinCount()
+	       {
+	            var GMS = GetGMS();
+	           GMS.SetCoins(10);
+	            int coins = GMS.GetCoins();
+	            Assert.AreEqual(10, coins);
+	        }
+	        
 
 		private GameManagerSub GetGMS (){
 			return Substitute.For<GameManagerSub> ();
