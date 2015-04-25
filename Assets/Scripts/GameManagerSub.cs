@@ -26,19 +26,22 @@ namespace UnityTest
 				}
 			}
 			for (int i = 0; i< levelSeed.Length; i++) {
+
 				char c = levelSeed[i];
-				int x = c;
-				stringSeed += x;
+				int x = (int)c;
+				stringSeed += x.ToString();
 			}
+			stringSeed = levelSeed;
 			floatSeed = float.Parse (stringSeed);
 		}
 		
 		public float GenerateLevel(){
-			noise.Noise (floatSeed, section);
+			generated = noise.Noise (floatSeed, section);
 			section = section + 100.1f;
 			//generate level here
 			generated *= 10;
 			generated = Mathf.Floor (generated);
+			Debug.Log ("Generated" + generated);
 			return generated;
 			//closer to 5 is more common
 		}

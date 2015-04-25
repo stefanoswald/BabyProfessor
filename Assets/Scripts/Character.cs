@@ -33,12 +33,14 @@ public class Character : Person {
 		}
 	}
 
-	void Jump(){
-		rigidBody.AddForce(new Vector2(0f, jumpForce));
-		SetGrounded (false);
+	public void Jump(){
+		if (GetGrounded ()) {
+			rigidBody.AddForce (new Vector2 (0f, jumpForce));
+			SetGrounded (false);
+		}
 	}
 
-	void Shoot(){
+	public void Shoot(){
 		GameObject projectile = (GameObject)Instantiate (Resources.Load ("Projectile"),spawner.position, Quaternion.identity );
 	}
 

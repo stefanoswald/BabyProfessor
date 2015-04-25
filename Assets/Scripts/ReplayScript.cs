@@ -16,9 +16,28 @@ public class ReplayScript : MonoBehaviour {
 	}
 	
 	public void Replay(){
-		GMScript.SetSeed (text.text);
+		if (text.text != "") {
+				GMScript.SetSeed ("7");
+			} else {
+				GMScript.SetSeed("0");
+			}
 		GMScript.SetScore (0); 
-		Application.LoadLevel ("GameScene");
+			try{
+				GMScript.GMS.ConvertSeed (text.text);
+				Debug.Log ("that worked");
+				Application.LoadLevel ("GameScene");
+			}
+			catch{
+				GMScript.GMS.ConvertSeed ("0");
+				Debug.Log ("that didn't work");
+				Application.LoadLevel ("GameScene");
+			}
 	}
+	public void MainMenu(){
+		Application.LoadLevel ("MainMenu");
+	}
+		public void SwapArt(){
+			GMScript.SwapArt ();
+		}
 }
 }

@@ -3,8 +3,10 @@ using System.Collections;
 namespace UnityTest{
 	public class GameManager : MonoBehaviour, INoise {
 		static bool created = false;
-		bool artType;
+		public bool artType;
 		public GameManagerSub GMS;
+		public bool ads = true;
+		public string seed = "";
 		int score = 0;
 		// Use this for initialization
 		void Awake () {
@@ -21,8 +23,17 @@ namespace UnityTest{
 			}
 		}
 
+		public void SwapAds(bool newAds){
+			ads = newAds;
+		}
+
 		void Update () {
 			artType = GMS.artType;
+			seed = GetSeed ();
+		}
+
+		public void SwapArt(){
+			GMS.SwapArt();
 		}
 
 		public string GetSeed(){
